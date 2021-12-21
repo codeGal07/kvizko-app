@@ -9,9 +9,11 @@ import android.widget.TextView;
 public class IzbranKvizActivity extends AppCompatActivity {
 
     TextView imeKviza;
-    private TextView vprasanjeAliOdgovor;
-    private TextView labelVprasanjeOdgovor;
     private TextView kateroVprasanjeOdKolkih;
+    private TextView vprasanje;
+    private TextView odgovor;
+
+
 
     private VprasanjeModel[] vprasanjeBank;
     private int currentIndex =0;
@@ -43,39 +45,24 @@ public class IzbranKvizActivity extends AppCompatActivity {
             };
         }
 
-        vprasanjeAliOdgovor = (TextView) findViewById(R.id.vprasanjeAliOdgovor);
-        vprasanjeAliOdgovor.setText(vprasanjeBank[currentIndex].getVprasanje());
+        vprasanje = (TextView) findViewById(R.id.trenutnoVprasanje);
+        vprasanje.setText(vprasanjeBank[currentIndex].getVprasanje());
 
-        labelVprasanjeOdgovor = (TextView) findViewById(R.id.labelVprasanjeOdgovor);
-        labelVprasanjeOdgovor.setText("Vprasanje:");
+        odgovor = (TextView) findViewById(R.id.trenutenOdgovor);
+        odgovor.setText(vprasanjeBank[currentIndex].getOdgovor());
 
         kateroVprasanjeOdKolkih = (TextView) findViewById(R.id.kateroOdKolkih);
         kateroVprasanjeOdKolkih.setText(String.valueOf(currentIndex) + "/" + String.valueOf(vprasanjeBank.length));
 
     }
 
-    public void shiftOdgovorVprasanje(View view){
-        if (isVprasanje) {
 
-
-            String odgovor = vprasanjeBank[currentIndex].getOdgovor();
-            vprasanjeAliOdgovor.setText(odgovor);
-            labelVprasanjeOdgovor.setText("Odgovor:");
-            isVprasanje=false;
-        } else {
-            String vprasanje = vprasanjeBank[currentIndex].getVprasanje();
-            vprasanjeAliOdgovor.setText(vprasanje);
-            labelVprasanjeOdgovor.setText("Vprasanje:");
-            isVprasanje=true;
-        }
-
-    }
 
     public void updateVpasanje(View view){
         currentIndex = (currentIndex + 1) % vprasanjeBank.length;
+        vprasanje.setText(vprasanjeBank[currentIndex].getVprasanje());
+        odgovor.setText(vprasanjeBank[currentIndex].getOdgovor());
 
-        String vprasanje = vprasanjeBank[currentIndex].getVprasanje();
-        vprasanjeAliOdgovor.setText(vprasanje);
         kateroVprasanjeOdKolkih.setText(String.valueOf(currentIndex) + "/" + String.valueOf(vprasanjeBank.length));
     }
 }
