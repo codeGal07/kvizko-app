@@ -22,6 +22,9 @@ public class MojiKviziActivity extends AppCompatActivity implements CourseAdapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moji_kvizi);
 
+        String uporabnisko_ime = getIntent().getStringExtra("EXTRA_UPORABNISKO_IME");
+
+
         courseRV = findViewById(R.id.idRVCourse);
 
         // here we have created new array list and added data to it.

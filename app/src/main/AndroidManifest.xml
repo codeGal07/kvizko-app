@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".UstvariNovKvizActivity"
+            android:exported="false" />
+        <activity
             android:name=".IzbranKvizActivity"
             android:exported="false" />
         <activity

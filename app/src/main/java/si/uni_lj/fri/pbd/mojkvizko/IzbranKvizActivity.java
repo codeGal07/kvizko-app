@@ -56,8 +56,6 @@ public class IzbranKvizActivity extends AppCompatActivity {
 
     }
 
-
-
     public void updateVpasanje(View view){
         currentIndex = (currentIndex + 1) % vprasanjeBank.length;
         vprasanje.setText(vprasanjeBank[currentIndex].getVprasanje());

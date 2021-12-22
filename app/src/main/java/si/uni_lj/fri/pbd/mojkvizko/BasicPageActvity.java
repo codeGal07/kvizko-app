@@ -17,17 +17,22 @@ public class BasicPageActvity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_page);
 
-        String user_mail = getIntent().getStringExtra("EXTRA_MAIL");
+        String uporabnisko_ime = getIntent().getStringExtra("EXTRA_UPORABNISKO_IME");
         name = (TextView) findViewById(R.id.textMail);
-        name.setText(user_mail);
+        name.setText(uporabnisko_ime);
 
     }
 
-
     public void mojiKvizi(View view) {
         Intent intent = new Intent(this, MojiKviziActivity.class);
+        intent.putExtra("EXTRA_UPORABNISKO_IME", name.getText().toString());
         startActivity(intent);
 
+    }
+
+    public void ustvariNovKviz(View view) {
+        Intent intent = new Intent(this, UstvariNovKvizActivity.class);
+        startActivity(intent);
     }
 
 

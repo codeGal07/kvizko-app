@@ -1,14 +1,14 @@
 package si.uni_lj.fri.pbd.mojkvizko;
 
-import android.content.pm.VersionedPackage;
-
 public class VprasanjeModel {
     private String vprasanje;
     private String odgovor;
 
+
     public VprasanjeModel(String vprasanje, String odgovor) {
         this.vprasanje = vprasanje;
         this.odgovor = odgovor;
+
     }
 
     public String getVprasanje() {
