@@ -7,7 +7,7 @@
     tools:context=".MojiKviziActivity">
 
     <TextView
-        android:id="@+id/textMail"
+        android:id="@+id/kvizLabel"
 
         android:layout_width="163dp"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:id="@+id/idRVCourse"
         android:layout_width="match_parent"
         android:layout_height="647dp"
-        android:layout_below="@+id/textMail"
+        android:layout_below="@+id/kvizLabel"
         android:layout_marginTop="12dp" />
 
 </RelativeLayout>

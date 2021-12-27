@@ -30,6 +30,13 @@ public class BasicPageActvity extends AppCompatActivity {
 
     }
 
+    public void vsiKvizi(View view) {
+        Intent intent = new Intent(this, MojiKviziActivity.class);
+        intent.putExtra("EXTRA_UPORABNISKO_IME", "VSI_KVIZI");
+        startActivity(intent);
+
+    }
+
     public void ustvariNovKviz(View view) {
         Intent intent = new Intent(this, UstvariNovKvizActivity.class);
         startActivity(intent);

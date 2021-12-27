@@ -39,6 +39,7 @@ public class IzbranKvizActivity extends AppCompatActivity {
 
 
         String ime_kviza = getIntent().getStringExtra("EXTRA_IME_KVIZA");
+        String ime_uporabnik = getIntent().getStringExtra("EXTRA_USER");
         imeKviza = (TextView) findViewById(R.id.ImeKviza);
         imeKviza.setText(ime_kviza);
         indeksZaVprasanjaBank = 0;
@@ -48,7 +49,7 @@ public class IzbranKvizActivity extends AppCompatActivity {
         FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
         CollectionReference applicationsRef = rootRef.collection("user");
         //todo temp string Janez123, change to uporabnisko_ime
-        DocumentReference applicationIdRef = applicationsRef.document("Janez123");
+        DocumentReference applicationIdRef = applicationsRef.document(ime_uporabnik);
         applicationIdRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();

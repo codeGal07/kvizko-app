@@ -7,23 +7,9 @@
     tools:context=".BasicPageActvity">
 
 
-    <TextView
-        android:id="@+id/textMail"
-        android:layout_width="180dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="84dp"
-        android:text="TextView"
-
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
     <androidx.appcompat.widget.AppCompatButton
 
-        android:id="@+id/button"
+        android:id="@+id/button3"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="277dp"
         android:layout_height="138dp"
@@ -37,17 +23,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textMail"
-        app:layout_constraintVertical_bias="0.915" />
+        app:layout_constraintVertical_bias="0.238" />
+
+    <TextView
+        android:id="@+id/textMail"
+        android:layout_width="180dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="84dp"
+        android:text="TextView"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/button"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="277dp"
+        android:layout_height="138dp"
+        android:background="@drawable/button"
+        android:onClick="vsiKvizi"
+        android:text="Vsi kvizi"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button2"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="277dp"
         android:layout_height="136dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="84dp"
         android:background="@drawable/button"
-        android:text="Ustvari nov kviz"
         android:onClick="ustvariNovKviz"
+        android:text="Ustvari nov kviz"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -5,12 +5,14 @@ public class CourseModel {
     private String course_name;
     private String course_rating;
     private int course_image;
+    private String uporabnik;
 
     // Constructor
-    public CourseModel(String course_name, String course_rating, int course_image) {
+    public CourseModel(String course_name, String course_rating, int course_image, String uporabnik) {
         this.course_name = course_name;
         this.course_rating = course_rating;
         this.course_image = course_image;
+        this.uporabnik = uporabnik;
     }
 
     // Getter and Setter
@@ -36,5 +38,13 @@ public class CourseModel {
 
     public void setCourse_image(int course_image) {
         this.course_image = course_image;
+    }
+
+    public String getUporabnik() {
+        return uporabnik;
+    }
+
+    public void setUporabnik(String uporabnik) {
+        this.uporabnik = uporabnik;
     }
 }

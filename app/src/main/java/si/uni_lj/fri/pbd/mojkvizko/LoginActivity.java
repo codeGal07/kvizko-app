@@ -68,12 +68,12 @@ public class LoginActivity extends AppCompatActivity {
         vprasanjaList1_u1.add( new VprasanjeModel("V kateri državi se je zgodil dan D?", "V Franciji"));
         vprasanjaList1_u1.add( new VprasanjeModel("Kdo je bil zaveznik nacistične Nemčije?", "Italija in Japonska"));
         vprasanjaList1_u1.add( new VprasanjeModel("Katerega leta se je začela 2. svetovna vojna?", "1939"));
-        KvizModel kvizModel1_u1 = new KvizModel("||. svetovna vojna", vprasanjaList1_u1);
+        KvizModel kvizModel1_u1 = new KvizModel("||. svetovna vojna", "Janez123",vprasanjaList1_u1);
 
         vprasanjaList2_u1.add( new VprasanjeModel("Kdo je avstrolopitek?", "Prvi človek al neki"));
         vprasanjaList2_u1.add( new VprasanjeModel("Kdaj je bla kamena doma?", "Enkrat v prazgodovini"));
         vprasanjaList2_u1.add( new VprasanjeModel("Kje so našli okostje avstrolopitka?", "V Afriki"));
-        KvizModel kvizModel2_u1 = new KvizModel("Prazgodovina", vprasanjaList2_u1);
+        KvizModel kvizModel2_u1 = new KvizModel("Prazgodovina", "Janez123", vprasanjaList2_u1);
 
         kvizModelList_u1.add(kvizModel1_u1);
         kvizModelList_u1.add(kvizModel2_u1);
@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
         //SECOND USER
         vprasanjaList1_u2.add( new VprasanjeModel("Kdaj je obstajalo rimsko cesarstvo", "27 pr. n. št.–1453"));
         vprasanjaList1_u2.add( new VprasanjeModel("Kater jezik so govorili rimljani", "Latinsko"));
-        KvizModel kvizModel_u2 = new KvizModel("Rimljani", vprasanjaList1_u2);
+        KvizModel kvizModel_u2 = new KvizModel("Rimljani", "Ana123", vprasanjaList1_u2);
 
         kvizModelList_u2.add(kvizModel_u2);
 
