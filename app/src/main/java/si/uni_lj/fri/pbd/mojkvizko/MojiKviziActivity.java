@@ -40,7 +40,7 @@ public class MojiKviziActivity extends AppCompatActivity implements CourseAdapte
 
         courseModelArrayList = new ArrayList<>();
         CourseAdapter courseAdapter = new CourseAdapter(this, courseModelArrayList, this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
         db = FirebaseFirestore.getInstance();
 
 //        courseModelArrayList.add(new CourseModel("||. svetovna vojna", "Spraševanje", R.drawable.quizimage));
@@ -77,7 +77,7 @@ public class MojiKviziActivity extends AppCompatActivity implements CourseAdapte
                 }
             }
         });
-
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         courseRV.setLayoutManager(linearLayoutManager);
         courseRV.setAdapter(courseAdapter);
 
