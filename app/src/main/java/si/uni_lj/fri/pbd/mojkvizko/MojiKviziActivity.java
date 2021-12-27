@@ -77,7 +77,7 @@ public class MojiKviziActivity extends AppCompatActivity implements CourseAdapte
 //                    Log.d("TAG", "------------MOJMAP--------------------- " + mojiKvizi.get(0));
                         for (Map<String, String> mojKviz : mojiKvizi) {
 
-                            System.out.println(mojKviz.get("imeKviza"));
+                            System.out.println(mojKviz);
                             courseModelArrayList.add(new CourseModel(mojKviz.get("imeKviza"), "aa", R.drawable.quizimage, "Janez123"));
 //                        list.add(mojKviz.get("imeKviza").getImeKviza());
                             Log.d("TAG", "------------MOJLISTMAP--------------------- " + mojKviz.get("imeKviza"));

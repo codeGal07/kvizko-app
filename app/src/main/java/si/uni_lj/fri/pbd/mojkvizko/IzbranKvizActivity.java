@@ -31,6 +31,7 @@ public class IzbranKvizActivity extends AppCompatActivity {
     private boolean isVprasanje = true;
     int indeksZaVprasanjaBank;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -48,7 +49,6 @@ public class IzbranKvizActivity extends AppCompatActivity {
 
         FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
         CollectionReference applicationsRef = rootRef.collection("user");
-        //todo temp string Janez123, change to uporabnisko_ime
         DocumentReference applicationIdRef = applicationsRef.document(ime_uporabnik);
         applicationIdRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {

@@ -39,6 +39,7 @@ public class BasicPageActvity extends AppCompatActivity {
 
     public void ustvariNovKviz(View view) {
         Intent intent = new Intent(this, UstvariNovKvizActivity.class);
+        intent.putExtra("EXTRA_UPORABNISKO_IME", name.getText().toString());
         startActivity(intent);
     }
 

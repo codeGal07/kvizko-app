@@ -62,7 +62,7 @@
         android:layout_marginBottom="84dp"
         android:background="@drawable/button"
         android:onClick="ustvariNovKviz"
-        android:text="Ustvari nov kviz"
+        android:text="Ustvari nov kviz ali vprašanje"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
