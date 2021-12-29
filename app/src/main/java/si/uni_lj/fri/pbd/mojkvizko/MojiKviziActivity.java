@@ -53,14 +53,7 @@ public class MojiKviziActivity extends AppCompatActivity implements CourseAdapte
 
         db = FirebaseFirestore.getInstance();
 
-//        courseModelArrayList.add(new CourseModel("||. svetovna vojna", "Spraševanje", R.drawable.quizimage));
-//        courseModelArrayList.add(new CourseModel("Zgodovina", "Ucenje za prvi test", R.drawable.quizimage));
-//        courseModelArrayList.add(new CourseModel("Prazgodovina", "Ponovitev", R.drawable.quizimage));
-//        courseModelArrayList.add(new CourseModel("Stari vek", "Vaja", R.drawable.quizimage));
-//        courseModelArrayList.add(new CourseModel("Srednji vek", "Domaca naloga", R.drawable.quizimage));
-//        courseModelArrayList.add(new CourseModel("Novi vek", "Seminarska naloga", R.drawable.quizimage));
-//        courseModelArrayList.add(new CourseModel("Hladna vojna", "Vaja", R.drawable.quizimage));
-//
+
         if (uporabnisko_ime.equals("VSI_KVIZI")) {
 
             FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
