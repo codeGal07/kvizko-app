@@ -1,5 +1,5 @@
 # kvizko-app
-Simple android app for school project interaction adn information design. 
+Simple android app for school project interaction and information design. 
 
  Pre-requisites
 --------------
