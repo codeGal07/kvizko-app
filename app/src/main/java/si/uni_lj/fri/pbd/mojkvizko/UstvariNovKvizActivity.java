@@ -35,7 +35,6 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
     FirebaseFirestore db;
     String ime_kviza;
     ArrayList<VprasanjeModel> vprasanjaList1_u2 = new ArrayList<VprasanjeModel>();
-    //    private VprasanjeModel[] vprasanjeBank = new VprasanjeModel[5];
     private ArrayList<VprasanjeModel> vprasanjaListIzBaze = new ArrayList<VprasanjeModel>();
 
     @Override
@@ -69,17 +68,15 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
                     int katernaslov = 0;
                     List<HashMap<String, String>> mojiKvizi_samoZaNaslov = (List<HashMap<String, String>>) document.get("Kvizi");
 
-//                    Log.d("TAG", "------------MOJMAP--------------------- " + mojiKvizi.get(0));
                     for (Map<String, String> mojKviz : mojiKvizi_samoZaNaslov) {
                         naslovi.add(mojKviz.get("imeKviza"));
                     }
                     List<HashMap<String, List<HashMap<String, String>>>> mojiKvizi = (List<HashMap<String, List<HashMap<String, String>>>>) document.get("Kvizi");
 
                     for (Map<String, List<HashMap<String, String>>> mojKviz : mojiKvizi) {
-                        vprasanjaList1_u2.clear();
+                        vprasanjaList1_u2 =  new ArrayList<VprasanjeModel>();
                         for (HashMap<String, String> vprasanjeModelHash : mojKviz.get("vprasanjeModelList")) {
                             vprasanjaList1_u2.add(new VprasanjeModel(vprasanjeModelHash.get("vprasanje"), vprasanjeModelHash.get("odgovor")));
-                            Log.d("TAG", "---------IME KVIZAAAAAAAAAAAAAA-----------: " + naslovi.get(katernaslov));
                         }
                         KvizModel kvizModel_u2 = new KvizModel(naslovi.get(katernaslov), uporabnisko_ime, vprasanjaList1_u2);
                         kvizModelList_u2.add(kvizModel_u2);
@@ -91,7 +88,6 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     public void dodajVprasanje(View view) {
@@ -99,7 +95,6 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
         imeKvizaInput = findViewById(R.id.imeKvizaInput);
         vprasanjeInput = findViewById(R.id.vprasanjeInput);
         odgovorInput = findViewById(R.id.odgovorInput);
-
 
         novKviz = true;
 
@@ -110,24 +105,18 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
 
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
-                Log.d("TAG", "---------DocumentSnapshot dataaaaa-----------: " + document.getData());
 
                 if (document.exists()) {
                     List<String> naslovi = new ArrayList<>();
-                    int katernaslov = 0;
                     List<HashMap<String, List<HashMap<String, String>>>> mojiKvizi = (List<HashMap<String, List<HashMap<String, String>>>>) document.get("Kvizi");
                     List<HashMap<String, String>> mojiKvizi_samoZaNaslov = (List<HashMap<String, String>>) document.get("Kvizi");
 
-//                    Log.d("TAG", "------------MOJMAP--------------------- " + mojiKvizi.get(0));
                     for (Map<String, String> mojKviz : mojiKvizi_samoZaNaslov) {
                         naslovi.add(mojKviz.get("imeKviza"));
                     }
-                    Log.d("TAG", "---------IME KVIZAAAAAAAAAAAAAA-----------: " + naslovi);
-
 
                     //samo zato da dodam notr vprašanje v obstoječega če obstaja in ga shranim v vprasanjaList1_u2
                     for (Map<String, List<HashMap<String, String>>> mojKviz : mojiKvizi) {
-//                        Log.d("TAG", "---------wwwwwwwwwwwwwwww-----------: " + mojKviz.get("imeKviza"));
 
                         if (mojKviz.containsValue(imeKvizaInput.getText().toString())) {
 
@@ -135,11 +124,12 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
                             for (KvizModel obj : kvizModelList_u2) {
                                 if (obj.getImeKviza().equals(imeKvizaInput.getText().toString())) {
                                     kvizModelList_u2.remove(obj);
+                                    break;
                                 }
                             }
 
                             novKviz = false;
-                            vprasanjaList1_u2.clear();
+                            vprasanjaList1_u2 =  new ArrayList<VprasanjeModel>();
                             for (HashMap<String, String> vprasanjeModelHash : mojKviz.get("vprasanjeModelList")) {
                                 vprasanjaList1_u2.add(new VprasanjeModel(vprasanjeModelHash.get("vprasanje"), vprasanjeModelHash.get("odgovor")));
                             }
@@ -151,7 +141,7 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
                     }
 
                     if (novKviz) {
-                        vprasanjaList1_u2.clear();
+                        vprasanjaList1_u2 = new ArrayList<VprasanjeModel>();
                         vprasanjaList1_u2.add(new VprasanjeModel(vprasanjeInput.getText().toString(), odgovorInput.getText().toString()));
                         KvizModel kvizModel_u2 = new KvizModel(imeKvizaInput.getText().toString(), uporabnisko_ime, vprasanjaList1_u2);
                         kvizModelList_u2.add(kvizModel_u2);
@@ -176,65 +166,12 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
                                     Log.w("TAG", "Error writing document", e);
                                 }
                             });
-
-
                 }
             }
         });
 
 
         Toast.makeText(this, "Vprašanje uspešno dodano", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(this, BasicPageActvity.class);
-//        intent.putExtra("EXTRA_UPORABNISKO_IME", mail.getText().toString());
-//        startActivity(intent);
-
-
-//        vprasanjeInput.setText("");
-//        odgovorInput.setText("");
-
     }
 
-//    public void dodajVprasanjeFun (String uporabnisko_ime) {
-//        ArrayList<KvizModel> kvizModelList = new ArrayList<KvizModel>();
-//        //SECOND USER
-//        vprasanjaListIzBaze = pridobiVprasanja(uporabnisko_ime, imeKvizaInput.getText().toString());
-//        vprasanjaListIzBaze.add( new VprasanjeModel(vprasanjeInput.getText().toString(), odgovorInput.getText().toString()));
-//        KvizModel kvizModel_u2 = new KvizModel(imeKvizaInput.toString(), uporabnisko_ime, vprasanjaListIzBaze);
-//
-//    }
-
-//    //todo to ne dela
-//    public ArrayList<VprasanjeModel> pridobiVprasanja(String ime_uporabnik, String ime_kviza) {
-//        ArrayList<VprasanjeModel> vprasanjaList= new ArrayList<VprasanjeModel>();
-//        FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
-//        CollectionReference applicationsRef = rootRef.collection("user");
-//        DocumentReference applicationIdRef = applicationsRef.document(ime_uporabnik);
-//        Log.d("TAG", "------------wwwwwwwwwwwwwwwwwwwwwwwww--------------------- ");
-//        applicationIdRef.get().addOnCompleteListener(task -> {
-//            Log.d("TAG", "------------dddlčkjčkfAna--------------------- ");
-//            if (task.isSuccessful()) {
-//                DocumentSnapshot document = task.getResult();
-//                Log.d("TAG", "------------eeeeeeeeeeeeeeeeeeeeeeeeee--------------------- ");
-//                Log.d("TAG", "DocumentSnapshot data: " + document.getData());
-//                if (document.exists()) {
-//                    Log.d("TAG", "------------fffffffffffffffffffffffffffffff--------------------- ");
-//                    List<HashMap<String, List<HashMap<String, String>>>> mojiKvizi = (List<HashMap<String,  List<HashMap<String, String>>>>) document.get("Kvizi");
-//                    Log.d("TAG", "------------bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb--------------------- ");
-//                    for (Map<String,  List<HashMap<String, String>>> mojKviz : mojiKvizi) {
-//                        Log.d("TAG", "------------aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--------------------- " + mojKviz.get("vprasanjeModelList"));
-//                        if (mojKviz.containsValue(ime_kviza)) {
-//                            Log.d("TAG", "------------MOJLISTMAP--------------------- " + mojKviz.get("vprasanjeModelList"));
-//                            for (HashMap<String, String> vprasanjeModelHash  : mojKviz.get("vprasanjeModelList")) {
-//                                vprasanjaList.add(new VprasanjeModel(vprasanjeModelHash.get("vprasanje"), vprasanjeModelHash.get("odgovor"))) ;
-//                            }
-//
-//                        }
-//
-//                    }
-//
-//                }
-//            }
-//        });
-//      return vprasanjaList;
-//    }
 }
