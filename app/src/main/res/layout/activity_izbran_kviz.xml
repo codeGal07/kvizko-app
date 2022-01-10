@@ -77,7 +77,7 @@
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.844" />
+          app:layout_constraintVertical_bias="0.704" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -104,7 +104,7 @@
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.504" />
+          app:layout_constraintVertical_bias="0.704" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
