@@ -74,7 +74,7 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
                     List<HashMap<String, List<HashMap<String, String>>>> mojiKvizi = (List<HashMap<String, List<HashMap<String, String>>>>) document.get("Kvizi");
 
                     for (Map<String, List<HashMap<String, String>>> mojKviz : mojiKvizi) {
-                        vprasanjaList1_u2 =  new ArrayList<VprasanjeModel>();
+                        vprasanjaList1_u2 = new ArrayList<VprasanjeModel>();
                         for (HashMap<String, String> vprasanjeModelHash : mojKviz.get("vprasanjeModelList")) {
                             vprasanjaList1_u2.add(new VprasanjeModel(vprasanjeModelHash.get("vprasanje"), vprasanjeModelHash.get("odgovor")));
                         }
@@ -129,7 +129,7 @@ public class UstvariNovKvizActivity extends AppCompatActivity {
                             }
 
                             novKviz = false;
-                            vprasanjaList1_u2 =  new ArrayList<VprasanjeModel>();
+                            vprasanjaList1_u2 = new ArrayList<VprasanjeModel>();
                             for (HashMap<String, String> vprasanjeModelHash : mojKviz.get("vprasanjeModelList")) {
                                 vprasanjaList1_u2.add(new VprasanjeModel(vprasanjeModelHash.get("vprasanje"), vprasanjeModelHash.get("odgovor")));
                             }

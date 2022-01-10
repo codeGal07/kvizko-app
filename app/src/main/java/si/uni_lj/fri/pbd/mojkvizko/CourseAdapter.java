@@ -6,8 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.Viewholder> {
@@ -48,7 +50,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.Viewholder
 
     // View holder class for initializing of
     // your views such as TextView and Imageview.
-    public class Viewholder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class Viewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView courseIV;
         private TextView courseNameTV, courseRatingTV;
         OnItemClickListener onItemClickListener;
@@ -70,7 +72,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.Viewholder
 
 
     public interface OnItemClickListener {
-        void onItemClick( int position);
+        void onItemClick(int position);
     }
 
 }

@@ -108,7 +108,7 @@ public class MojiKviziActivity extends AppCompatActivity implements CourseAdapte
 
             FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
             CollectionReference applicationsRef = rootRef.collection("user");
-            //todo temp string Janez123, change to uporabnisko_ime
+
             DocumentReference applicationIdRef = applicationsRef.document(uporabnisko_ime);
             applicationIdRef.get().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {

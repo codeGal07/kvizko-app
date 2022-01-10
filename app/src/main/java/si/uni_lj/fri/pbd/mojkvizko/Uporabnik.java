@@ -7,6 +7,7 @@ public class Uporabnik {
     public Uporabnik() {
 
     }
+
     public Uporabnik(String email, String ime) {
         this.email = email;
         this.ime = ime;
