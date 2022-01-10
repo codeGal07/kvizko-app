@@ -26,7 +26,7 @@ public class IzbranKvizActivity extends AppCompatActivity {
 
 
 
-    private VprasanjeModel[] vprasanjeBank = new VprasanjeModel[5];
+    private VprasanjeModel[] vprasanjeBank = new VprasanjeModel[100];
     private int currentIndex =0;
     private boolean isVprasanje = true;
     int indeksZaVprasanjaBank;
