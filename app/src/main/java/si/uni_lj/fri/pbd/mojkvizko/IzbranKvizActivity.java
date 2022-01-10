@@ -25,7 +25,7 @@ public class IzbranKvizActivity extends AppCompatActivity {
     private TextView odgovor;
 
     private VprasanjeModel[] vprasanjeBank = new VprasanjeModel[100];
-    private int currentIndex = 1;
+    private int currentIndex = 0;
     int indeksZaVprasanjaBank;
 
 
@@ -69,7 +69,7 @@ public class IzbranKvizActivity extends AppCompatActivity {
                     odgovor.setText(vprasanjeBank[currentIndex].getOdgovor());
 
                     kateroVprasanjeOdKolkih = (TextView) findViewById(R.id.kateroOdKolkih);
-                    kateroVprasanjeOdKolkih.setText(String.valueOf(currentIndex) + "/" + String.valueOf(indeksZaVprasanjaBank));
+                    kateroVprasanjeOdKolkih.setText(String.valueOf(currentIndex+1) + "/" + String.valueOf(indeksZaVprasanjaBank));
 
                 }
             }
