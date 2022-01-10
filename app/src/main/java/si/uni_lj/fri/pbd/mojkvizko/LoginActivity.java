@@ -51,8 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         vprasanjaList1_u1.add(new VprasanjeModel("Katerega leta se je začela 2. svetovna vojna?", "1939"));
         KvizModel kvizModel1_u1 = new KvizModel("||. svetovna vojna", "Janez123", vprasanjaList1_u1);
 
-        vprasanjaList2_u1.add(new VprasanjeModel("Kdo je avstrolopitek?", "Prvi človek al neki"));
-        vprasanjaList2_u1.add(new VprasanjeModel("Kdaj je bla kamena doma?", "Enkrat v prazgodovini"));
+        vprasanjaList2_u1.add(new VprasanjeModel("Kdo je avstrolopitek?", "Skupina izumrlih človečnjakov"));
+        vprasanjaList2_u1.add(new VprasanjeModel("Kdaj so živeli avstrolopitki", "3 miljone let nazaj"));
         vprasanjaList2_u1.add(new VprasanjeModel("Kje so našli okostje avstrolopitka?", "V Afriki"));
         KvizModel kvizModel2_u1 = new KvizModel("Prazgodovina", "Janez123", vprasanjaList2_u1);
 
