@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/kvizLabel"
 
-        android:layout_width="163dp"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
 
         android:layout_alignParentStart="true"
@@ -17,12 +17,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="117dp"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginRight="131dp"
-        android:text="Moji kvizi"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:text="Moji sklopi učnih kartic"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.225"

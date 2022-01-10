@@ -40,9 +40,9 @@ public class MojiKviziActivity extends AppCompatActivity implements CourseAdapte
 
         label = (TextView) findViewById(R.id.kvizLabel);
         if (uporabnisko_ime.equals("VSI_KVIZI")) {
-            label.setText("Vsi kvizi");
+            label.setText("Vsi sklopi učnih kartic");
         } else {
-            label.setText("Moji kvizi");
+            label.setText("Moji sklopi učnih kartic");
         }
 
 
